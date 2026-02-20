@@ -28,7 +28,7 @@ export function NewDropsSection() {
           </Link>
         </div>
 
-        <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
           {products?.slice(0, 4).map((product, index) => (
             <div
               key={product.id}

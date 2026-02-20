@@ -40,7 +40,7 @@ export function FooterCtaBanner() {
           </button>
         </form>
       </div>
-      <div className="relative mt-8 flex lg:justify-center justify-startitems-center lg:mt-0 lg:shrink-0">
+      <div className="relative mt-8 flex lg:justify-center justify-start items-center lg:mt-0 lg:shrink-0">
         <div className="relative">
           <Image
             src="/images/logo-2.svg"

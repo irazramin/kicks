@@ -70,7 +70,7 @@ export function FooterLinks() {
             <FooterColumn title="Categories">
               <ul className="flex flex-col lg:gap-2 gap-1">
                 {CATEGORY_LINKS.map((link) => (
-                  <li key={link.href}>
+                  <li key={link.href} className="hover:scale-105 transition-transform duration-300 cursor-pointer">
                     <Link
                       href={link.href}
                       className="font-open-sans text-base lg:text-xl leading-relaxed font-semibold text-[#E7E7E3] transition-colors hover:text-white"
@@ -84,7 +84,7 @@ export function FooterLinks() {
             <FooterColumn title="Company">
               <ul className="flex flex-col lg:gap-2 gap-1">
                 {COMPANY_LINKS.map((link) => (
-                  <li key={link.href}>
+                  <li key={link.href} className="hover:scale-105 transition-transform duration-300 cursor-pointer">
                     <Link
                       href={link.href}
                       className="font-open-sans text-base lg:text-xl leading-relaxed font-semibold text-[#E7E7E3] transition-colors hover:text-white"
@@ -98,7 +98,7 @@ export function FooterLinks() {
             <FooterColumn title="Follow us">
               <ul className="flex gap-4">
                 {SOCIAL_LINKS.map(({ label, href, url }) => (
-                  <li key={label}>
+                  <li key={label} className="hover:rotate-180 transition-transform duration-300 cursor-pointer">
                     <Image src={url} alt={label} width={24} height={24} />
                   </li>
                 ))}
