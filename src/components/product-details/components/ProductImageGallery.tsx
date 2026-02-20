@@ -50,12 +50,12 @@ export function ProductImageGallery({
       <div className="flex-1 slider-container">
         <Slider {...mobileSettings} className="product-image-gallery-slider">
           {displayImages.map((image, index) => (
-            <div key={`${image}-${index}`} className="relative aspect-square overflow-hidden bg-[#f5f5f5]">
+            <div key={`${image}-${index}`} className="relative h-[273px] w-full overflow-hidden bg-[#f5f5f5] rounded-[16px]">
               <Image
                 src={image}
                 alt={`${title} - ${index + 1}`}
                 fill
-                className="object-contain rounded-[16px]"
+                className="object-cover w-full h-full"
                 sizes="100vw"
               />
             </div>
