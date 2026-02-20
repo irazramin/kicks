@@ -1,1 +1,0 @@
-export { SuggestionProductsHeader } from "./SuggestionProductsHeader";

@@ -119,3 +119,53 @@
 .suggestion-products-slider .slick-dots li.slick-active button:before {
   background: #4A69E2;
 }
+
+
+@media (max-width: 768px) {
+  .suggestion-products-slider .slick-dots {
+    margin-top: 0rem;
+    padding-bottom: 0rem;
+  }
+}
+
+.product-image-gallery-slider .slick-dots.slick-thumb {
+  position: relative;
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 0;
+  list-style: none;
+  bottom: auto;
+}
+.product-image-gallery-slider .slick-dots.slick-thumb li {
+  margin: 0;
+  width: 64px;
+  height: 64px;
+}
+.product-image-gallery-slider .slick-dots.slick-thumb li a,
+.product-image-gallery-slider .slick-dots.slick-thumb li button {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+  display: block;
+}
+.product-image-gallery-slider .slick-dots.slick-thumb li.slick-active a,
+.product-image-gallery-slider .slick-dots.slick-thumb li.slick-active button {
+  border-color: #4A69E2;
+}
+.product-image-gallery-slider .slick-dots.slick-thumb li button:before {
+  display: none;
+}
+.product-image-gallery-slider .slick-dots.slick-thumb li a img,
+.product-image-gallery-slider .slick-dots.slick-thumb li button img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+}

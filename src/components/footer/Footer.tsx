@@ -1,4 +1,6 @@
-import { FooterCtaBanner, FooterLinks, FooterCopyright } from "./components";
+import { FooterCtaBanner } from "./components/FooterCtaBanner";
+import { FooterCopyright } from "./components/FooterCopyright";
+import { FooterLinks } from "./components/FooterLinks";
 
 export function Footer() {
   return (

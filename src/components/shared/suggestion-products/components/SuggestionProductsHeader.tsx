@@ -10,7 +10,7 @@ export function SuggestionProductsHeader({
   onNext,
 }: SuggestionProductsHeaderProps) {
   return (
-    <div className="mb-6 flex h-[70px] items-center justify-between md:mb-8">
+    <div className="mb-6 flex items-center justify-between md:mb-8">
         <h2 className="font-rubik lg:text-5xl text-2xl font-semibold uppercase leading-[95%] tracking-tight text-[#232321] md:text-[72px]">
           You may also like
         </h2>

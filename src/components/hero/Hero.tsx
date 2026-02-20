@@ -1,12 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import {
-  HeroBannerImage,
-  HeroCarouselThumbs,
-  HeroHeading,
-  HeroProductInfo,
-} from "./components";
+import { HeroBannerImage } from "./components/HeroBannerImage";
+import { HeroCarouselThumbs } from "./components/HeroCarouselThumbs";
+import { HeroHeading } from "./components/HeroHeading";
+import { HeroProductInfo } from "./components/HeroProductInfo";
 import { HERO_CAROUSEL_SLIDES } from "./constants";
 
 export function Hero() {

@@ -23,16 +23,16 @@ export function ProductCard({
         "group flex flex-col overflow-hidden transition-shadow",
       )}
     >
-      <div className="relative flex-1 p-2 bg-white h-full rounded-[24px]">
-        <div className="relative flex h-full items-center justify-center bg-[#f5f5f5] rounded-[24px]">
-          <span className="inline-block absolute top-0 left-0 bg-[#4A69E2] px-4 py-3 text-xs font-semibold text-white rounded-tl-[24px] rounded-br-[24px]">
+      <div className="relative flex-1 p-2 bg-white h-full lg:rounded-[24px] rounded-[16px]">
+        <div className="relative flex h-full items-center justify-center bg-[#f5f5f5] lg:rounded-[24px] rounded-[16px]">
+          <span className="inline-block absolute top-0 left-0 bg-[#4A69E2] lg:px-4 px-2 lg:py-3 py-1 text-xs font-semibold text-white lg:rounded-tl-[24px] lg:rounded-br-[24px] rounded-tl-[12px] rounded-br-[12px]">
             New
           </span>
           {imageSrc ? (
             <img
               src={imageSrc}
               alt={title}
-              className="h-full w-full object-contain rounded-[24px]"
+              className="h-full w-full object-contain lg:rounded-[24px] rounded-[12px]"
             />
           ) : (
             <div className="h-32 w-32 rounded-full bg-gray-300" />

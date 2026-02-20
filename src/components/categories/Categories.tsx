@@ -2,7 +2,8 @@
 
 import { useRef, useState, useEffect } from "react";
 import Slider from "react-slick";
-import { CategoriesHeader, CategoryCard } from "./components";
+import { CategoriesHeader } from "./components/CategoriesHeader";
+import { CategoryCard } from "./components/CategoryCard";
 import { useCategories } from "@/hooks";
 
 const DESKTOP_SETTINGS = {
