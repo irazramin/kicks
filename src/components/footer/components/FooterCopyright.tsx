@@ -1,7 +1,7 @@
 export function FooterCopyright() {
   return (
-    <div className="rounded-b-[48px] bg-[#E5E5E5] py-4">
-      <p className="text-center font-open-sans text-xs text-[#232321]/80 md:text-sm">
+    <div className="-mx-4 overflow-hidden lg:pt-[28px] pt-6 lg:pb-[18px] pb-6 px-4 lg:-mx-0 lg:px-0">
+      <p className="text-center font-open-sans text-xs text-[#232321] md:text-base font-normal leading-[100%]">
         © All rights reserved
       </p>
     </div>

@@ -1,10 +1,7 @@
 import Link from "next/link";
-import {
-  Facebook,
-  Instagram,
-  Twitter,
-  Music2,
-} from "lucide-react";
+import { Facebook, Instagram, Twitter, Music2 } from "lucide-react";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const CATEGORY_LINKS = [
   { label: "Runners", href: "/categories/runners" },
@@ -22,91 +19,101 @@ const COMPANY_LINKS = [
 ];
 
 const SOCIAL_LINKS = [
-  { label: "Facebook", href: "#", icon: Facebook },
-  { label: "Instagram", href: "#", icon: Instagram },
-  { label: "Twitter", href: "#", icon: Twitter },
-  { label: "TikTok", href: "#", icon: Music2 },
+  { label: "Facebook", href: "#", url: "/images/facebook.svg" },
+  { label: "Instagram", href: "#", url: "/images/instagram.svg" },
+  { label: "Twitter", href: "#", url: "/images/twitter.svg" },
+  { label: "TikTok", href: "#", url: "/images/tiktok.svg" },
 ];
 
 function FooterColumn({
   title,
   children,
+  titleClassName,
+  childrenClassName,
 }: {
   title: string;
   children: React.ReactNode;
+  titleClassName?: string;
+  childrenClassName?: string;
 }) {
   return (
     <div>
-      <h3 className="font-rubik text-sm font-semibold uppercase tracking-wide text-[#FFD43B] md:text-base">
+      <h3
+        className={cn(
+          "font-rubik text-xl font-semibold tracking-wide text-[#FFA52F] md:text-2xl",
+          titleClassName,
+        )}
+      >
         {title}
       </h3>
-      <div className="mt-4">{children}</div>
+      <div className={cn("mt-4", childrenClassName)}>{children}</div>
     </div>
   );
 }
 
 export function FooterLinks() {
   return (
-    <div className="container container-7xl mx-auto px-4 lg:px-0">
-      <div className="relative bg-[#212121] px-6 py-12 md:px-8 md:py-16 lg:px-12 rounded-[48px]">
-        <div className="relative z-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          <FooterColumn title="About us">
-            <p className="font-open-sans text-sm leading-relaxed text-white/90 md:max-w-[260px]">
+    <div className="relative overflow-hidden">
+      <div className="relative bg-[#212121] px-4 pt-6 md:pt-[40px] lg:px-12 lg:rounded-[48px] rounded-[24px]">
+        <div className="relative z-10 flex items-start lg:gap-[122px] gap-10 lg:flex-row flex-col">
+          <FooterColumn
+            title="About us"
+            titleClassName="lg:text-[36px] text-[24px] font-semibold leading-[100%]"
+            childrenClassName="lg:mt-4 mt-1"
+          >
+            <p className="font-open-sans text-base lg:text-xl leading-relaxed font-semibold text-[#E7E7E3] md:max-w-[446px]">
               We are the biggest hyperstore in the universe. We got you all
               cover with our exclusive collections and latest drops.
             </p>
           </FooterColumn>
-          <FooterColumn title="Categories">
-            <ul className="flex flex-col gap-2">
-              {CATEGORY_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="font-open-sans text-sm text-white/90 transition-colors hover:text-white"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </FooterColumn>
-          <FooterColumn title="Company">
-            <ul className="flex flex-col gap-2">
-              {COMPANY_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="font-open-sans text-sm text-white/90 transition-colors hover:text-white"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </FooterColumn>
-          <FooterColumn title="Follow us">
-            <ul className="flex gap-4">
-              {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
-                <li key={label}>
-                  <Link
-                    href={href}
-                    aria-label={label}
-                    className="text-white/90 transition-colors hover:text-white"
-                  >
-                    <Icon className="h-5 w-5 md:h-6 md:w-6" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </FooterColumn>
+          <div className="w-full flex lg:gap-8 gap-6 justify-evenly flex-1 lg:flex-row flex-col">
+            <FooterColumn title="Categories">
+              <ul className="flex flex-col lg:gap-2 gap-1">
+                {CATEGORY_LINKS.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="font-open-sans text-base lg:text-xl leading-relaxed font-semibold text-[#E7E7E3] transition-colors hover:text-white"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </FooterColumn>
+            <FooterColumn title="Company">
+              <ul className="flex flex-col lg:gap-2 gap-1">
+                {COMPANY_LINKS.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="font-open-sans text-base lg:text-xl leading-relaxed font-semibold text-[#E7E7E3] transition-colors hover:text-white"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </FooterColumn>
+            <FooterColumn title="Follow us">
+              <ul className="flex gap-4">
+                {SOCIAL_LINKS.map(({ label, href, url }) => (
+                  <li key={label}>
+                    <Image src={url} alt={label} width={24} height={24} />
+                  </li>
+                ))}
+              </ul>
+            </FooterColumn>
+          </div>
         </div>
-        <div
-          className="pointer-events-none absolute bottom-0 right-0 opacity-[0.06]"
-          aria-hidden
-        >
-          <span className="font-rubik text-[180px] font-bold leading-none text-white md:text-[240px]">
-            KICKS
-          </span>
+        <div className=" w-full lg:mt-[97px] mt-[45px]">
+          <Image
+            className="w-full h-full object-cover"
+            src="/images/logo-bg.svg"
+            alt="Footer Background"
+            width={100}
+            height={100}
+          />
         </div>
       </div>
     </div>

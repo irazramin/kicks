@@ -2,9 +2,11 @@ import { FooterCtaBanner, FooterLinks, FooterCopyright } from "./components";
 
 export function Footer() {
   return (
-    <footer className="bg-[#4A69E2] container container-7xl mx-auto px-4 lg:px-0 rounded-[48px] overflow-hidden">
-      <FooterCtaBanner />
-      <FooterLinks />
+    <footer className="container container-7xl mx-auto px-4 lg:px-0">
+      <div className="bg-[#4A69E2] lg:rounded-[48px] rounded-[24px] overflow-hidden">
+        <FooterCtaBanner />
+        <FooterLinks />
+      </div>
       <FooterCopyright />
     </footer>
   );
