@@ -10,17 +10,17 @@ export function CategoryCard({ category }: CategoryCardProps) {
   return (
     <Link
       href={`/categories/${category.slug}`}
-      className="group relative flex w-[690px] h-[690px] shrink-0 flex-col overflow-hidden bg-[#f5f5f5] transition-shadow hover:shadow-lg"
+      className="group relative flex lg:w-[690px] w-[358px] lg:h-[690px] h-[358px] shrink-0 flex-col overflow-hidden bg-[#f5f5f5]"
     >
       <div className="relative w-full overflow-hidden bg-[#e5e3e8]">
         <img
-          src={category.image}
-          alt={category.name}
-          className="h-full w-full object-cover object-center transition-transform group-hover:scale-105"
+          src={category.image ? category.image : "https://placehold.co/300x300?text=Shoes"}
+          alt={category.name || "Category Image"}
+          className="lg:h-full h-auto lg:w-full w-auto object-cover object-center transition-transform group-hover:scale-105"
         />
       </div>
-      <div className="flex items-end justify-between gap-3 p-5">
-        <span className="font-rubik text-lg font-semibold uppercase tracking-tight text-[#232321]">
+      <div className="flex items-end justify-between gap-3 lg:py-12 py-4 lg:px-[30px] px-4">
+        <span className="font-rubik md:text-4xl text-2xl leading-[100%] font-semibold uppercase text-[#232321]">
           {category.name}
         </span>
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#232321] text-white transition-colors group-hover:bg-[#333]">

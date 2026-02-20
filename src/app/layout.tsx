@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Rubik, Open_Sans } from "next/font/google";
 import { Navbar } from "@/components/layout";
+import { Footer } from "@/components/footer";
 import "./globals.css";
 
 const rubik = Rubik({
@@ -32,6 +33,7 @@ export default function RootLayout({
       >
         <Navbar />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
