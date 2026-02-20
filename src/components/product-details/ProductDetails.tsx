@@ -84,7 +84,7 @@ export default function ProductDetails({
                 onSelectSize={setSelectedSize}
                 unavailable={unavailableSizes}
               />
-              <ProductActionButtons />
+              <ProductActionButtons product={product} />
             </div>
             <ProductDescription
               description={product.description}

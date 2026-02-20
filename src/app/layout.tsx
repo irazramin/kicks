@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Rubik, Open_Sans } from "next/font/google";
 import { Navbar } from "@/components/layout";
 import { Footer } from "@/components/footer";
+import { StoreProvider } from "@/store/StoreProvider";
 import "./globals.css";
 
 const rubik = Rubik({
@@ -31,9 +32,11 @@ export default function RootLayout({
       <body
         className={`${rubik.variable} ${openSans.variable} min-h-screen bg-background antialiased`}
       >
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <StoreProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </StoreProvider>
       </body>
     </html>
   );

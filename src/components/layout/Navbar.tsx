@@ -4,9 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { useAppSelector } from "@/store/hooks";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const cartItems = useAppSelector((state) => state.cart.items);
 
   return (
     <header className="container container-7xl mx-auto lg:px-0 px-4">
@@ -79,10 +81,14 @@ export function Navbar() {
           </Link>
           <Link
             href="/cart"
-            className="relative text-foreground transition-colors hover:text-foreground/80"
-            aria-label="Cart (0 items)"
+            className="relative text-foreground transition-colors hover:text-foreground/80 bg-[#FFA52F] lg:w-8 w-5 lg:h-8 h-5 flex items-center justify-center rounded-full"
+            aria-label={`Cart (${cartItems.length} items)`}
           >
-            <Image className="lg:w-8 w-5 lg:h-8 h-5" src={"/images/profile.svg"} width={32} height={32} alt="Cart" />
+            {cartItems.length > 0 && (
+              <span className="text-[#232321] text-xs font-bold rounded-full flex items-center justify-center">
+                {cartItems.length}
+              </span>
+            )}
           </Link>
         </div>
       </div>

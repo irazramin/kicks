@@ -1,11 +1,29 @@
 "use client";
 
-export function ProductActionButtons() {
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import type { RootState } from "@/store";
+import { addToCart } from "@/store/slices/cartSlice";
+import type { Product } from "@/types/product";
+
+export function ProductActionButtons({product}: {product: Product}) {
+  const dispatch = useAppDispatch();
+
+  const handleAddToCart = () => {
+    const item = {
+      id: product.id.toString(),
+      name: product.title,
+      price: product.price,
+      quantity: 1,
+    }
+    dispatch(addToCart([item]));
+  }
+
   return (
     <div className="flex flex-col gap-2">
       <div className="flex gap-2">
         <button
           type="button"
+          onClick={() => handleAddToCart()}
           className="flex-1 rounded-md bg-[#232321] px-6 py-4 text-sm font-medium tracking-[.25px] uppercase text-white transition-colors hover:bg-[#3d3d3b]"
         >
           Add to cart
