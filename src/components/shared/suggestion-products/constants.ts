@@ -3,7 +3,7 @@ export const MOBILE_BREAKPOINT = 768;
 export const DESKTOP_SETTINGS = {
   dots: true,
   arrows: false,
-  infinite: true,
+  infinite: false,
   speed: 500,
   slidesToShow: 4,
   slidesToScroll: 1,
@@ -17,7 +17,7 @@ export const DESKTOP_SETTINGS = {
 export const MOBILE_SETTINGS = {
   dots: true,
   arrows: false,
-  infinite: true,
+  infinite: false,
   speed: 500,
   slidesToShow: 2,
   slidesToScroll: 1,

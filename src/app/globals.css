@@ -13,6 +13,7 @@
   --color-secondary: var(--secondary);
   --font-rubik: var(--rubik-font-family);
   --font-open-sans: var(--open-sans-font-family);
+  --color-muted: var(--muted);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --radius-sm: calc(var(--radius) - 4px);
@@ -121,7 +122,6 @@
 .suggestion-products-slider .slick-dots li.slick-active button:before {
   background: var(--primary);
 }
-
 
 @media (max-width: 768px) {
   .suggestion-products-slider .slick-dots {

@@ -6,7 +6,6 @@ export interface ProductCardProps {
   price: string;
   imageSrc?: string;
   href: string;
-  isSelected?: boolean;
 }
 
 export function ProductCard({
@@ -14,7 +13,6 @@ export function ProductCard({
   price,
   imageSrc,
   href,
-  isSelected,
 }: ProductCardProps) {
   return (
     <Link

@@ -11,6 +11,7 @@ import {
   ProductImageGallery,
   ProductSizeSelector,
 } from ".";
+import { ProductDetailsSkeleton } from "@/components/shared/skeletons";
 import { SuggestionProducts } from "@/components/shared/suggestion-products";
 import {
   DEFAULT_BADGE,
@@ -25,7 +26,6 @@ export interface ProductDetailsProps {
   colors?: ColorOption[];
   sizes?: number[];
   unavailableSizes?: number[];
-  aboutBullets?: string[];
 }
 
 export default function ProductDetails({
@@ -34,38 +34,21 @@ export default function ProductDetails({
   colors = DEFAULT_COLORS,
   sizes = DEFAULT_SIZES,
   unavailableSizes = [],
-  aboutBullets,
 }: ProductDetailsProps) {
   const { data: product, loading, error } = useProduct(productId);
   const [selectedColor, setSelectedColor] = useState(colors[0]?.name ?? "");
-  const [selectedSize, setSelectedSize] = useState<number | null>(40);
+  const [selectedSize, setSelectedSize] = useState<number | null>(
+    sizes.find((s) => !unavailableSizes.includes(s)) ?? null
+  );
 
-  if (loading) {
-    return (
-      <div className="min-h-screen">
-        <div className="container container-7xl mx-auto px-4 py-12">
-          <div className="animate-pulse grid grid-cols-1 gap-8 lg:grid-cols-2">
-            <div className="rounded-2xl bg-[#e5e5e5] aspect-square min-h-[400px]" />
-            <div className="space-y-4">
-              <div className="h-8 bg-[#e5e5e5] rounded w-1/3" />
-              <div className="h-10 bg-[#e5e5e5] rounded w-2/3" />
-              <div className="h-8 bg-[#e5e5e5] rounded w-1/4" />
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (error || !product) notFound();
-
-  const images = product.images?.length ? product.images : [];
+  if (loading) return <div className="container container-7xl mx-auto lg:px-0 px-4 mt-8"><ProductDetailsSkeleton /></div>;
+  if (error || !product) return notFound();
 
   return (
     <div className="min-h-screen">
       <div className="container container-7xl mx-auto lg:px-0 px-4 lg:pt-8 pt-6">
         <div className="flex lg:gap-4 gap-6 lg:flex-row flex-col">
-          <ProductImageGallery images={images} title={product.title} />
+          <ProductImageGallery images={product.images} title={product.title} />
           <div className="flex flex-col lg:w-[440px] w-full">
             <ProductHeader
               badge={badge}
@@ -86,14 +69,9 @@ export default function ProductDetails({
               />
               <ProductActionButtons product={product} />
             </div>
-            <ProductDescription
-              description={product.description}
-            />
+            <ProductDescription description={product.description} />
           </div>
         </div>
-      </div>
-      <div className="lg:pb-[60px] pb-[40px] lg:pt-[128px] pt-[24px]">
-      <SuggestionProducts />
       </div>
     </div>
   );

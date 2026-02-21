@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kicks
 
-## Getting Started
+- **Home** — Hero carousel, new drops grid, categories slider, reviews
+- **Product detail** — Gallery, options, add to cart, “You may also like” slider
+- **Cart** — Items, order summary, suggestion products
 
-First, run the development server:
+---
+
+## Setup
 
 ```bash
+git clone <repo>
+cd folder
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [https://kicks-ruddy.vercel.app/](https://kicks-ruddy.vercel.app/).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Build: `npm run build` then `npm start`. Lint: `npm run lint`. No env vars required.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Tech stack
 
-To learn more about Next.js, take a look at the following resources:
+| | |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| UI | React 19, Tailwind 4, Radix/shadcn-style (Skeleton) |
+| State | Redux Toolkit (cart), React state |
+| Data | Axios, custom hooks (`useProducts`, `useProduct`, `useCategories`) |
+| Other | react-slick (carousels), Lucide (icons) |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Folder structure
 
-## Deploy on Vercel
+```
+src/
+├── app/          — routes & layout
+├── components/   — feature UI (hero, new-drops, cart, product-details, …) + shared (skeletons, suggestion-products)
+├── hooks/        — useProducts, useProduct, useCategories
+├── services/     — API calls
+├── store/        — Redux (cart)
+├── lib/          — apiClient, utils
+└── types/        — Product, Category, Cart
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Each feature under `components/` has a main component, optional `constants.ts`, and a `components/` subfolder for its pieces. An `index.ts` barrel lets you import from `@/components/new-drops` (or hero, cart, etc.) instead of deep paths.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Live URL
+
+Local: [https://kicks-ruddy.vercel.app/](https://kicks-ruddy.vercel.app/)

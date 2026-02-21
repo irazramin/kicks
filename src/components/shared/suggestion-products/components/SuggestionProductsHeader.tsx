@@ -1,13 +1,18 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface SuggestionProductsHeaderProps {
   onPrev: () => void;
   onNext: () => void;
+  prevDisabled?: boolean;
+  nextDisabled?: boolean;
 }
 
 export function SuggestionProductsHeader({
   onPrev,
   onNext,
+  prevDisabled = false,
+  nextDisabled = false,
 }: SuggestionProductsHeaderProps) {
   return (
     <div className="mb-6 flex items-center justify-between md:mb-8">
@@ -18,7 +23,10 @@ export function SuggestionProductsHeader({
           <button
             type="button"
             onClick={onPrev}
-            className="flex h-10 w-10 items-center justify-center rounded-[8px] bg-secondary text-[#E8E8E8] transition-colors hover:bg-[#333]"
+            disabled={prevDisabled}
+            className={cn(
+              "flex h-10 w-10 items-center justify-center rounded-[8px] bg-secondary text-[#E8E8E8] transition-colors hover:bg-[#333] disabled:pointer-events-none disabled:opacity-50"
+            )}
             aria-label="Previous products"
           >
             <ChevronLeft className="h-5 w-5" aria-hidden />
@@ -26,7 +34,10 @@ export function SuggestionProductsHeader({
           <button
             type="button"
             onClick={onNext}
-            className="flex h-10 w-10 items-center justify-center rounded-[8px] bg-secondary text-[#E8E8E8] transition-colors hover:bg-[#333]"
+            disabled={nextDisabled}
+            className={cn(
+              "flex h-10 w-10 items-center justify-center rounded-[8px] bg-secondary text-[#E8E8E8] transition-colors hover:bg-[#333] disabled:pointer-events-none disabled:opacity-50"
+            )}
             aria-label="Next products"
           >
             <ChevronRight className="h-5 w-5" aria-hidden />

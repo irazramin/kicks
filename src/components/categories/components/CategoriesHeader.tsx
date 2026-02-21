@@ -1,14 +1,22 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface CategoriesHeaderProps {
   onScrollLeft: () => void;
   onScrollRight: () => void;
+  prevDisabled?: boolean;
+  nextDisabled?: boolean;
 }
 
 export function CategoriesHeader({
   onScrollLeft,
   onScrollRight,
+  prevDisabled = false,
+  nextDisabled = false,
 }: CategoriesHeaderProps) {
+  const buttonClass =
+    "flex h-10 w-10 items-center justify-center rounded-[8px] bg-white text-secondary transition-colors cursor-pointer text-sm disabled:pointer-events-none disabled:opacity-50";
+
   return (
     <div className="container container-7xl mx-auto lg:px-0 px-4">
       <div className="lg:mb-8 mb-6 flex lg:h-[70px] items-center justify-between">
@@ -19,18 +27,20 @@ export function CategoriesHeader({
           <button
             type="button"
             onClick={onScrollLeft}
-            className="flex h-10 w-10 items-center justify-center rounded-[8px] bg-white text-secondary transition-colors cursor-pointer text-sm"
+            disabled={prevDisabled}
+            className={cn(buttonClass)}
             aria-label="Previous categories"
           >
-            <ChevronLeft className="h-4 w-4" aria-hidden  />
+            <ChevronLeft className="h-4 w-4" aria-hidden />
           </button>
           <button
             type="button"
             onClick={onScrollRight}
-            className="flex h-10 w-10 items-center justify-center rounded-[8px] bg-white text-secondary transition-colors cursor-pointer text-sm"
+            disabled={nextDisabled}
+            className={cn(buttonClass)}
             aria-label="Next categories"
           >
-            <ChevronRight className="h-4 w-4" aria-hidden  />
+            <ChevronRight className="h-4 w-4" aria-hidden />
           </button>
         </div>
       </div>
