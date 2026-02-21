@@ -25,7 +25,7 @@ export default function Categories() {
   const sliderSettings = isMobile ? MOBILE_SETTINGS : DESKTOP_SETTINGS;
 
   return (
-    <section className="bg-[#232321] lg:py-16 py-6 lg:pt-[90px] pt-6 md:pb-0">
+    <section className="bg-secondary lg:py-16 py-6 lg:pt-[90px] pt-6 md:pb-0">
       <div className="">
         <CategoriesHeader
           onScrollLeft={() => sliderRef.current?.slickPrev()}

@@ -16,7 +16,7 @@ export function ProductColorSelector({
 }: ProductColorSelectorProps) {
   return (
     <div className="w-full">
-      <span className="block text-base leading-[100%] font-semibold uppercase text-[#232321] mb-4">
+      <span className="block text-base leading-[100%] font-semibold uppercase text-secondary mb-4">
         Color
       </span>
       <div className="flex flex-wrap lg:gap-2 gap-4">
@@ -28,10 +28,10 @@ export function ProductColorSelector({
             className={cn(
               "lg:h-10 h-8 lg:w-10 w-8 rounded-full border-[3px] transition-shadow",
               selectedColor === name
-                ? "ring-[3px] ring-offset-[3px] ring-[#232321]"
+                ? "ring-[3px] ring-offset-[3px] ring-secondary"
                 : "hover:opacity-90"
             )}
-            style={{ backgroundColor: hex, borderColor: selectedColor === name ? "#232321" : "transparent" }}
+            style={{ backgroundColor: hex, borderColor: selectedColor === name ? "var(--secondary)" : "transparent" }}
             aria-label={`Color ${name}`}
             title={name}
           />

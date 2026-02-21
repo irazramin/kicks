@@ -28,13 +28,13 @@ export function ProductActionButtons({product}: {product: Product}) {
         <button
           type="button"
           onClick={() => handleAddToCart()}
-          className="flex-1 rounded-md bg-[#232321] px-6 py-4 text-sm font-medium tracking-[.25px] uppercase text-white transition-colors hover:bg-[#3d3d3b]"
+          className="flex-1 rounded-md bg-secondary px-6 py-4 text-sm font-medium tracking-[.25px] uppercase text-white transition-colors hover:bg-[#3d3d3b]"
         >
           Add to cart
         </button>
         <button
           type="button"
-          className="flex w-12 py-4 shrink-0 items-center justify-center rounded-md bg-[#232321] text-white transition-colors hover:bg-[#3d3d3b]"
+          className="flex w-12 py-4 shrink-0 items-center justify-center rounded-md bg-secondary text-white transition-colors hover:bg-[#3d3d3b]"
           aria-label="Add to wishlist"
         >
           <svg
@@ -54,7 +54,7 @@ export function ProductActionButtons({product}: {product: Product}) {
       </div>
       <button
         type="button"
-        className="w-full rounded-md bg-[#4A69E2] px-6 py-4 text-sm font-medium tracking-[.25px] uppercase text-white transition-colors hover:bg-[#2563eb]"
+        className="w-full rounded-md bg-primary px-6 py-4 text-sm font-medium tracking-[.25px] uppercase text-white transition-colors hover:bg-[#2563eb]"
       >
         Buy it now
       </button>

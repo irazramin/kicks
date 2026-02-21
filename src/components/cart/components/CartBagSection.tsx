@@ -14,10 +14,10 @@ export function CartBagSection({
 }: CartBagSectionProps) {
   return (
     <div className="rounded-[16px] lg:p-6 p-4 bg-white">
-      <h1 className="font-rubik text-xl font-semibold text-[#232321] lg:text-[32px] leading-[120%]">
+      <h1 className="font-rubik text-xl font-semibold text-secondary lg:text-[32px] leading-[120%]">
         Your Bag
       </h1>
-      <p className="mt-2 text-base text-[#232321]/80 font-open-sans leading-[120%] font-normal">
+      <p className="mt-2 text-base text-secondary/80 font-open-sans leading-[120%] font-normal">
         Items in your bag not reserved - check out now to make them yours.
       </p>
       <div className="lg:mt-12 mt-2 grid grid-cols-1 gap-4">
@@ -36,7 +36,7 @@ export function CartBagSection({
           />
         )) : (
           <div className="flex items-center justify-center h-full">
-            <p className="text-base text-[#232321]/80 font-open-sans leading-[120%] font-normal">
+            <p className="text-base text-secondary/80 font-open-sans leading-[120%] font-normal">
               Your bag is empty.
             </p>
           </div>

@@ -20,10 +20,10 @@ export function CategoryCard({ category }: CategoryCardProps) {
         />
       </div>
       <div className="flex items-end justify-between gap-3 lg:py-12 py-4 lg:px-[30px] px-4">
-        <span className="font-rubik md:text-4xl text-2xl leading-[100%] font-semibold uppercase text-[#232321]">
+        <span className="font-rubik md:text-4xl text-2xl leading-[100%] font-semibold uppercase text-secondary">
           {category.name}
         </span>
-        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#232321] text-white transition-colors group-hover:bg-[#333]">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary text-white transition-colors group-hover:bg-[#333]">
           <ArrowUpRight className="h-5 w-5" aria-hidden />
         </span>
       </div>

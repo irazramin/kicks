@@ -85,7 +85,7 @@ export function Navbar() {
             aria-label={`Cart (${cartItems.length} items)`}
           >
             {cartItems.length > 0 ?(
-              <span className="text-[#232321] text-xs font-bold rounded-full flex items-center justify-center">
+              <span className="text-secondary text-xs font-bold rounded-full flex items-center justify-center">
                 {cartItems?.length ?? 0}
               </span>
             ): 0}

@@ -14,7 +14,7 @@ export function Hero() {
         <div className="relative md:rounded-[64px] rounded-[24px] border border-[#C4B5D0]/60 overflow-hidden bg-white">
           <div className="absolute left-0 md:top-[160px] top-[100px] z-10 -ml-1">
             <div
-              className="bg-[#232321] md:rounded-b-[16px] rounded-b-[8px] md:p-6 p-2 -rotate-90 origin-center flex items-center justify-center absolute md:left-[-85px] left-[-65.5px]"
+              className="bg-secondary md:rounded-b-[16px] rounded-b-[8px] md:p-6 p-2 -rotate-90 origin-center flex items-center justify-center absolute md:left-[-85px] left-[-65.5px]"
               style={{ transformOrigin: "center center" }}
             >
               <span className="text-white md:text-base text-xs font-semibold tracking-wide whitespace-nowrap font-rubik">

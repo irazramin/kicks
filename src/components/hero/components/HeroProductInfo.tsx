@@ -11,7 +11,7 @@ export function HeroProductInfo() {
       </p>
       <Link
         href="/products/nike-air-max"
-        className="font-rubik inline-flex items-center justify-center md:rounded-[8px] rounded-[4px] bg-[#4A69E2] md:px-8 md:py-[15.5px] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#3d3de6]"
+        className="font-rubik inline-flex items-center justify-center md:rounded-[8px] rounded-[4px] bg-primary md:px-8 md:py-[15.5px] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#3d3de6]"
       >
         SHOP NOW
       </Link>

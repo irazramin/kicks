@@ -41,30 +41,30 @@ export function CartItemCard({
       <div className="min-w-0 flex flex-1 flex-col justify-between items-start">
         <div className="w-full flex-1">
           <div className="flex items-start justify-between gap-3 w-full">
-            <h3 className="font-rubik lg:text-2xl text-base font-semibold uppercase leading-[120%] text-[#232321]">
+            <h3 className="font-rubik lg:text-2xl text-base font-semibold uppercase leading-[120%] text-secondary">
               {name}
             </h3>
-            <span className="font-rubik lg:inline-block hidden lg:text-2xl text-xl font-semibold leading-[120%] text-[#4A69E2] shrink-0">
+            <span className="font-rubik lg:inline-block hidden lg:text-2xl text-xl font-semibold leading-[120%] text-primary shrink-0">
               ${price.toFixed(2)}
             </span>
           </div>
-          <p className="mt-2 lg:text-xl text-sm text-[#232321]/85 font-open-sans leading-[120%] font-semibold">
+          <p className="mt-2 lg:text-xl text-sm text-secondary/85 font-open-sans leading-[120%] font-semibold">
             {category}
           </p>
-          <p className="lg:text-xl text-sm text-[#232321]/85 font-open-sans leading-[120%] font-semibold mt-2">
+          <p className="lg:text-xl text-sm text-secondary/85 font-open-sans leading-[120%] font-semibold mt-2">
             {color}
           </p>
           <div className="lg:mt-5 mt-2 flex flex-row  items-center lg:gap-[40px] gap-4">
             <div className="flex items-center gap-6">
-              <span className="font-open-sans lg:text-xl text-base font-semibold leading-[120%] text-[#232321]/80">Size</span>
+              <span className="font-open-sans lg:text-xl text-base font-semibold leading-[120%] text-secondary/80">Size</span>
               <Image className="lg:block hidden" src={"/images/arrow-down-2.svg"} width={24} height={24} alt="Size" />
             </div>
             <div className="flex items-center gap-6">
-              <span className="font-open-sans lg:text-xl text-base font-semibold leading-[120%] text-[#232321]/80">Quantity</span>
+              <span className="font-open-sans lg:text-xl text-base font-semibold leading-[120%] text-secondary/80">Quantity</span>
               <Image className="lg:block hidden" src={"/images/arrow-down-2.svg"} width={24} height={24} alt="Quantity" />
             </div>
           </div>
-          <span className="font-rubik lg:hidden inline-block lg:text-2xl text-xl font-semibold leading-[120%] text-[#4A69E2] shrink-0 mt-2">
+          <span className="font-rubik lg:hidden inline-block lg:text-2xl text-xl font-semibold leading-[120%] text-primary shrink-0 mt-2">
               ${price.toFixed(2)}
             </span>
         </div>

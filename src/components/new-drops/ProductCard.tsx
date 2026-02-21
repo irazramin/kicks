@@ -25,7 +25,7 @@ export function ProductCard({
     >
       <div className="relative flex-1 p-2 bg-white h-full lg:rounded-[24px] rounded-[16px]">
         <div className="relative flex h-full items-center justify-center bg-[#f5f5f5] lg:rounded-[24px] rounded-[16px]">
-          <span className="inline-block absolute top-0 left-0 bg-[#4A69E2] lg:px-4 px-2 lg:py-3 py-1 text-xs font-semibold text-white lg:rounded-tl-[24px] lg:rounded-br-[24px] rounded-tl-[12px] rounded-br-[12px]">
+          <span className="inline-block absolute top-0 left-0 bg-primary lg:px-4 px-2 lg:py-3 py-1 text-xs font-semibold text-white lg:rounded-tl-[24px] lg:rounded-br-[24px] rounded-tl-[12px] rounded-br-[12px]">
             New
           </span>
           {imageSrc ? (
@@ -40,10 +40,10 @@ export function ProductCard({
         </div>
       </div>
       <div className="text-start flex flex-col items-start lg:gap-4 gap-2 h-full mt-4">
-        <h3 className="font-semibold text-[#232321] md:text-2xl text-base leading-[100%] font-rubik h-[57px]">
+        <h3 className="font-semibold text-secondary md:text-2xl text-base leading-[100%] font-rubik h-[57px]">
           {title}
         </h3>
-        <button type="button" className="block w-full rounded-[8px] bg-[#232321] px-4 py-4 text-center md:text-sm text-xs font-medium text-white font-rubik">
+        <button type="button" className="block w-full rounded-[8px] bg-secondary px-4 py-4 text-center md:text-sm text-xs font-medium text-white font-rubik">
           VIEW PRODUCT - <span className="text-[#FFA52F]">{price}</span>
         </button>
       </div>

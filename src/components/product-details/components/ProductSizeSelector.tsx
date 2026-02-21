@@ -18,12 +18,12 @@ export function ProductSizeSelector({
   return (
     <div className="w-full">
       <div className="flex items-center justify-between mb-2">
-        <span className="text-base leading-[100%] font-semibold uppercase text-[#232321]">
+        <span className="text-base leading-[100%] font-semibold uppercase text-secondary">
           Size
         </span>
         <button
           type="button"
-          className="text-sm leading-[100%] font-medium text-[#232321] underline hover:no-underline"
+          className="text-sm leading-[100%] font-medium text-secondary underline hover:no-underline"
         >
           Size chart
         </button>
@@ -41,10 +41,10 @@ export function ProductSizeSelector({
               className={cn(
                 "w-[50px] h-[48px] rounded-[8px] font-medium transition-colors",
                 isSelected
-                  ? "bg-[#232321] text-white hover:bg-[#3d3d3b]"
+                  ? "bg-secondary text-white hover:bg-[#3d3d3b]"
                   : isUnavailable
                     ? "bg-gray-400 cursor-not-allowed text-gray-600"
-                    : "bg-white text-[#232321] "
+                    : "bg-white text-secondary "
               )}
             >
               {size}

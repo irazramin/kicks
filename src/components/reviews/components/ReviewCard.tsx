@@ -12,10 +12,10 @@ export function ReviewCard({ review }: ReviewCardProps) {
       <div className="flex flex-1 flex-col gap-4 p-4 lg:p-8">
         <div className="flex gap-4">
           <div className="min-w-0 flex-1">
-            <h3 className="font-rubik lg:text-2xl text-xl font-semibold text-[#232321] md:text-2xl">
+            <h3 className="font-rubik lg:text-2xl text-xl font-semibold text-secondary md:text-2xl">
               {review.headline}
             </h3>
-            <p className="mt-2 lg:text-base text-sm text-[#232321]/90 md:text-base font-open-sans">
+            <p className="mt-2 lg:text-base text-sm text-secondary/90 md:text-base font-open-sans">
               {review.text}
             </p>
             <div className="mt-2 flex items-center gap-2">
@@ -28,7 +28,7 @@ export function ReviewCard({ review }: ReviewCardProps) {
                   />
                 ))}
               </div>
-              <span className="font-open-sans text-sm font-semibold text-[#232321]">
+              <span className="font-open-sans text-sm font-semibold text-secondary">
                 {review.rating.toFixed(1)}
               </span>
             </div>

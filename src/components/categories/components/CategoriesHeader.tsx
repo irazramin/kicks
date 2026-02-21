@@ -19,7 +19,7 @@ export function CategoriesHeader({
           <button
             type="button"
             onClick={onScrollLeft}
-            className="flex h-10 w-10 items-center justify-center rounded-[8px] bg-white text-[#232321] transition-colors cursor-pointer text-sm"
+            className="flex h-10 w-10 items-center justify-center rounded-[8px] bg-white text-secondary transition-colors cursor-pointer text-sm"
             aria-label="Previous categories"
           >
             <ChevronLeft className="h-4 w-4" aria-hidden  />
@@ -27,7 +27,7 @@ export function CategoriesHeader({
           <button
             type="button"
             onClick={onScrollRight}
-            className="flex h-10 w-10 items-center justify-center rounded-[8px] bg-white text-[#232321] transition-colors cursor-pointer text-sm"
+            className="flex h-10 w-10 items-center justify-center rounded-[8px] bg-white text-secondary transition-colors cursor-pointer text-sm"
             aria-label="Next categories"
           >
             <ChevronRight className="h-4 w-4" aria-hidden  />
