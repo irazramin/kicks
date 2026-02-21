@@ -36,7 +36,7 @@ export function OrderSummary({
       </ul>
       <div className="mt-4 flex justify-between font-rubik text-2xl font-semibold text-[#232321]">
         <span>Total</span>
-        <span>${total.toFixed(2)}</span>
+        <span>${subtotal > 0 ? total.toFixed(2) : 0}</span>
       </div>
       <Link
         href="/checkout"

@@ -14,6 +14,10 @@ export function ProductActionButtons({product}: {product: Product}) {
       name: product.title,
       price: product.price,
       quantity: 1,
+      image: product.images[0],
+      category: product.category.name,
+      color: "Enamel Blue/ University White",
+      size: product.category.image,
     }
     dispatch(addToCart([item]));
   }

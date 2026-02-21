@@ -1,33 +1,20 @@
 "use client";
-
-import { useState } from "react";
 import { CartBanner } from "./components/CartBanner";
 import { CartBagSection } from "./components/CartBagSection";
-import type { CartLineItem } from "./components/CartBagSection";
 import { OrderSummary } from "./components/OrderSummary";
 import { SuggestionProducts } from "../shared/suggestion-products";
-
-const MOCK_ITEMS: CartLineItem[] = [
-  {
-    id: "1",
-    image: "https://i.imgur.com/qNOjJje.jpeg",
-    name: "DROPSET TRAINER SHOES",
-    category: "Men's Road Running Shoes",
-    color: "Enamel Blue / University White",
-    price: 130,
-    size: "10",
-    quantity: 1,
-  },
-];
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { removeFromCart } from "@/store/slices/cartSlice";
 
 export function Cart() {
-  const [items, setItems] = useState<CartLineItem[]>(MOCK_ITEMS);
-
+  const items = useAppSelector((state) => state.cart.items);
+  const dispatch = useAppDispatch();
+  
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
   const delivery = 6.99;
 
   const handleRemove = (id: string) => {
-    setItems((prev) => prev.filter((item) => item.id !== id));
+    dispatch(removeFromCart(id));
   };
 
   return (

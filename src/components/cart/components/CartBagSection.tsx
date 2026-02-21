@@ -30,8 +30,8 @@ export function CartBagSection({
       <p className="mt-2 text-base text-[#232321]/80 font-open-sans leading-[120%] font-normal">
         Items in your bag not reserved - check out now to make them yours.
       </p>
-      <div className="lg:mt-12 mt-2">
-        {items.map((item) => (
+      <div className="lg:mt-12 mt-2 grid grid-cols-1 gap-4">
+        { items.length > 0 ? items.map((item) => (
           <CartItemCard
             key={item.id}
             image={item.image}
@@ -44,7 +44,13 @@ export function CartBagSection({
             onWishlist={() => onWishlistItem?.(item.id)}
             onRemove={() => onRemoveItem?.(item.id)}
           />
-        ))}
+        )) : (
+          <div className="flex items-center justify-center h-full">
+            <p className="text-base text-[#232321]/80 font-open-sans leading-[120%] font-normal">
+              Your bag is empty.
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );

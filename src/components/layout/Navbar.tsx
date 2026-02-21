@@ -84,11 +84,11 @@ export function Navbar() {
             className="relative text-foreground transition-colors hover:text-foreground/80 bg-[#FFA52F] lg:w-8 w-5 lg:h-8 h-5 flex items-center justify-center rounded-full"
             aria-label={`Cart (${cartItems.length} items)`}
           >
-            {cartItems.length > 0 && (
+            {cartItems.length > 0 ?(
               <span className="text-[#232321] text-xs font-bold rounded-full flex items-center justify-center">
-                {cartItems.length}
+                {cartItems?.length ?? 0}
               </span>
-            )}
+            ): 0}
           </Link>
         </div>
       </div>
