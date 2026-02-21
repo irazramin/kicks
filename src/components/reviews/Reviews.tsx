@@ -1,5 +1,4 @@
-import { ReviewsHeader } from "./components/ReviewsHeader";
-import { ReviewCard } from "./components/ReviewCard";
+import { ReviewCard, ReviewsHeader } from ".";
 import { REVIEWS } from "./constants";
 
 export function Reviews() {

@@ -3,34 +3,13 @@
 import { useRef, useState, useEffect } from "react";
 import Slider from "react-slick";
 import { ProductCard } from "@/components/new-drops";
-import { SuggestionProductsHeader } from "./components/SuggestionProductsHeader";
+import { SuggestionProductsHeader } from ".";
 import { useProducts } from "@/hooks";
-
-const DESKTOP_SETTINGS = {
-  dots: true,
-  arrows: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  rows: 1,
-  slidesPerRow: 1,
-  responsive: [
-    { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 1 } },
-  ],
-};
-
-const MOBILE_SETTINGS = {
-  dots: true,
-  arrows: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 2,
-  slidesToScroll: 1,
-  rows: 2,
-  slidesPerRow: 1,
-  responsive: undefined,
-};
+import {
+  DESKTOP_SETTINGS,
+  MOBILE_BREAKPOINT,
+  MOBILE_SETTINGS,
+} from "./constants";
 
 export function SuggestionProducts() {
   const sliderRef = useRef<Slider>(null);
@@ -38,7 +17,7 @@ export function SuggestionProducts() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
+    const check = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
     check();
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);

@@ -1,29 +1,7 @@
 import Link from "next/link";
-import { Facebook, Instagram, Twitter, Music2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-
-const CATEGORY_LINKS = [
-  { label: "Runners", href: "/categories/runners" },
-  { label: "Sneakers", href: "/categories/sneakers" },
-  { label: "Basketball", href: "/categories/basketball" },
-  { label: "Outdoor", href: "/categories/outdoor" },
-  { label: "Golf", href: "/categories/golf" },
-  { label: "Hiking", href: "/categories/hiking" },
-];
-
-const COMPANY_LINKS = [
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-  { label: "Blogs", href: "/blogs" },
-];
-
-const SOCIAL_LINKS = [
-  { label: "Facebook", href: "#", url: "/images/facebook.svg" },
-  { label: "Instagram", href: "#", url: "/images/instagram.svg" },
-  { label: "Twitter", href: "#", url: "/images/twitter.svg" },
-  { label: "TikTok", href: "#", url: "/images/tiktok.svg" },
-];
+import { CATEGORY_LINKS, COMPANY_LINKS, SOCIAL_LINKS } from "../constants";
 
 function FooterColumn({
   title,

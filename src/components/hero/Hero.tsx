@@ -1,12 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { HeroBannerImage } from "./components/HeroBannerImage";
-import { HeroCarouselThumbs } from "./components/HeroCarouselThumbs";
-import { HeroHeading } from "./components/HeroHeading";
-import { HeroProductInfo } from "./components/HeroProductInfo";
+import { HeroBannerImage, HeroCarouselThumbs, HeroHeading, HeroProductInfo } from ".";
 import { HERO_CAROUSEL_SLIDES } from "./constants";
-
 export function Hero() {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const activeSlide = HERO_CAROUSEL_SLIDES[activeSlideIndex];

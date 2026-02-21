@@ -1,13 +1,7 @@
-export { default as ProductDetails } from "./ProductDetails";
-export type { ProductDetailsProps } from "./ProductDetails";
 export { ProductImageGallery } from "./components/ProductImageGallery";
-export type { ProductImageGalleryProps } from "./components/ProductImageGallery";
 export { ProductHeader } from "./components/ProductHeader";
-export type { ProductHeaderProps } from "./components/ProductHeader";
 export { ProductColorSelector } from "./components/ProductColorSelector";
-export type { ColorOption, ProductColorSelectorProps } from "./components/ProductColorSelector";
 export { ProductSizeSelector } from "./components/ProductSizeSelector";
-export type { ProductSizeSelectorProps } from "./components/ProductSizeSelector";
 export { ProductActionButtons } from "./components/ProductActionButtons";
 export { ProductDescription } from "./components/ProductDescription";
-export type { ProductDescriptionProps } from "./components/ProductDescription";
+export { default as ProductDetails } from "./ProductDetails";

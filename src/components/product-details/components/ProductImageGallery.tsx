@@ -3,20 +3,19 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Slider from "react-slick";
+import { FALLBACK_IMAGE, MOBILE_BREAKPOINT } from "../constants";
 
 export interface ProductImageGalleryProps {
   images: string[];
   title: string;
 }
 
-const MOBILE_BREAKPOINT = 768;
-
 export function ProductImageGallery({
   images,
   title,
 }: ProductImageGalleryProps) {
   const [isMobile, setIsMobile] = useState(false);
-  const displayImages = images.length ? images : ["https://picsum.photos/600/600"];
+  const displayImages = images.length ? images : [FALLBACK_IMAGE];
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);

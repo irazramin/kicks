@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { ProductCard } from "./ProductCard";
+import { ProductCard } from ".";
 import { useProducts } from "@/hooks";
 
 export function NewDropsSection() {

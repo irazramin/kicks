@@ -1,7 +1,5 @@
 "use client";
-import { CartBanner } from "./components/CartBanner";
-import { CartBagSection } from "./components/CartBagSection";
-import { OrderSummary } from "./components/OrderSummary";
+import { CartBanner, CartBagSection, OrderSummary } from ".";
 import { SuggestionProducts } from "../shared/suggestion-products";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { removeFromCart } from "@/store/slices/cartSlice";
@@ -9,7 +7,7 @@ import { removeFromCart } from "@/store/slices/cartSlice";
 export function Cart() {
   const items = useAppSelector((state) => state.cart.items);
   const dispatch = useAppDispatch();
-  
+
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
   const delivery = 6.99;
 

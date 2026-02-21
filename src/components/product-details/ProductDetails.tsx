@@ -3,21 +3,21 @@
 import { useState } from "react";
 import { notFound } from "next/navigation";
 import { useProduct } from "@/hooks";
-import { ProductImageGallery } from "./components/ProductImageGallery";
-import { ProductHeader } from "./components/ProductHeader";
-import { ProductColorSelector } from "./components/ProductColorSelector";
-import type { ColorOption } from "./components/ProductColorSelector";
-import { ProductSizeSelector } from "./components/ProductSizeSelector";
-import { ProductActionButtons } from "./components/ProductActionButtons";
-import { ProductDescription } from "./components/ProductDescription";
+import {
+  ProductActionButtons,
+  ProductColorSelector,
+  ProductDescription,
+  ProductHeader,
+  ProductImageGallery,
+  ProductSizeSelector,
+} from ".";
 import { SuggestionProducts } from "@/components/shared/suggestion-products";
-
-const DEFAULT_COLORS: ColorOption[] = [
-  { name: "Shadow Navy", hex: "#1e3a5f" },
-  { name: "Army Green", hex: "#4a5d23" },
-];
-
-const DEFAULT_SIZES = [38, 39, 40, 41, 42, 43, 44, 45, 46, 47];
+import {
+  DEFAULT_BADGE,
+  DEFAULT_COLORS,
+  DEFAULT_SIZES,
+  type ColorOption,
+} from "./constants";
 
 export interface ProductDetailsProps {
   productId: number;
@@ -30,7 +30,7 @@ export interface ProductDetailsProps {
 
 export default function ProductDetails({
   productId,
-  badge = "New Release",
+  badge = DEFAULT_BADGE,
   colors = DEFAULT_COLORS,
   sizes = DEFAULT_SIZES,
   unavailableSizes = [],

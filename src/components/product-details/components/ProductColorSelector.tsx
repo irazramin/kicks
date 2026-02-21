@@ -1,11 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-
-export interface ColorOption {
-  name: string;
-  hex: string;
-}
+import type { ColorOption } from "../constants";
 
 export interface ProductColorSelectorProps {
   colors: ColorOption[];

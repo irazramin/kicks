@@ -2,29 +2,13 @@
 
 import { useRef, useState, useEffect } from "react";
 import Slider from "react-slick";
-import { CategoriesHeader } from "./components/CategoriesHeader";
-import { CategoryCard } from "./components/CategoryCard";
+import { CategoriesHeader, CategoryCard } from ".";
 import { useCategories } from "@/hooks";
-
-const DESKTOP_SETTINGS = {
-  dots: false,
-  arrows: false,
-  infinite: false,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  rows: 1,
-  slidesPerRow: 1,
-  variableWidth: true,
-};
-
-const MOBILE_SETTINGS = {
-  ...DESKTOP_SETTINGS,
-  rows: 2,
-  slidesPerRow: 1,
-  variableWidth: false,
-  responsive: undefined,
-};
+import {
+  DESKTOP_SETTINGS,
+  MOBILE_BREAKPOINT,
+  MOBILE_SETTINGS,
+} from "./constants";
 
 export default function Categories() {
   const sliderRef = useRef<Slider>(null);
@@ -32,7 +16,7 @@ export default function Categories() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
+    const check = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
     check();
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);

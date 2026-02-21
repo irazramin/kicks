@@ -1,2 +1,2 @@
-export { SuggestionProducts } from "./SuggestionProducts";
 export { SuggestionProductsHeader } from "./components/SuggestionProductsHeader";
+export { SuggestionProducts } from "./SuggestionProducts";
