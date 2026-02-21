@@ -1,7 +1,6 @@
 export { Cart } from "./Cart";
 export { CartBanner } from "./components/CartBanner";
 export { CartBagSection } from "./components/CartBagSection";
-export type { CartLineItem, CartBagSectionProps } from "./components/CartBagSection";
 export { CartItemCard } from "./components/CartItemCard";
 export type { CartItemCardProps } from "./components/CartItemCard";
 export { OrderSummary } from "./components/OrderSummary";

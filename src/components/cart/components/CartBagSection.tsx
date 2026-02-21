@@ -1,15 +1,5 @@
 import { CartItemCard } from "./CartItemCard";
-
-export interface CartLineItem {
-  id: string;
-  image: string;
-  name: string;
-  category: string;
-  color: string;
-  price: number;
-  size: string;
-  quantity: number;
-}
+import { CartLineItem } from "@/types/cart";
 
 export interface CartBagSectionProps {
   items: CartLineItem[];

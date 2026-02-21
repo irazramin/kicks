@@ -1,8 +1,9 @@
+import { CATEGORIES_API_URL } from "@/constants/api-url";
 import { apiClient } from "@/lib/api-client";
 import type { Category } from "@/types/category";
 
 export async function getCategories(): Promise<Category[]> {
-  const { data } = await apiClient.get<Category[]>("/categories");
+  const { data } = await apiClient.get<Category[]>(CATEGORIES_API_URL);
   return data;
 }
 
