@@ -36,7 +36,7 @@ export default function Categories() {
 
   return (
     <section className="bg-secondary lg:py-16 py-6 lg:pt-[90px] pt-6 md:pb-0">
-      <div className="">
+      <div className="max-w-[1440px] mx-auto">
         <CategoriesHeader
           onScrollLeft={() => sliderRef.current?.slickPrev()}
           onScrollRight={() => sliderRef.current?.slickNext()}

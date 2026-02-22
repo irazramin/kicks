@@ -1,4 +1,5 @@
 import { useProducts } from "@/hooks";
+import { NotFound } from "@/components/shared/NotFound";
 import { SuggestionProductSkeleton } from "@/components/shared/skeletons";
 import { ProductCard } from "./ProductCard";
 import { DEFAULT_CATEGORY_SLUG, MAX_PRODUCTS, SKELETON_COUNT } from "../constants";
@@ -23,8 +24,8 @@ export function ProductsList() {
   if (!hasProducts) {
     return (
       <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
-        <div className="col-span-full flex flex-col items-center justify-center min-h-[200px]">
-          <p className="text-center text-muted-foreground">No products found</p>
+        <div className="col-span-full">
+          <NotFound message="No products found" className="min-h-[200px]" />
         </div>
       </div>
     );

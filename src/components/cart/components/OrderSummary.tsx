@@ -27,7 +27,7 @@ export function OrderSummary({
         </li>
         <li className="flex justify-between text-secondary">
           <span className="lg:text-xl text-base font-open-sans leading-[100%] font-semibold  ">Delivery</span>
-          <span className="lg:text-xl text-base font-open-sans leading-[100%] font-semibold">${delivery.toFixed(2)}</span>
+          <span className="lg:text-xl text-base font-open-sans leading-[100%] font-semibold">${itemCount > 0 ? delivery.toFixed(2) : 0}</span>
         </li>
         <li className="flex justify-between text-secondary">
           <span className="text-xl font-open-sans leading-[100%] font-semibold">Sales Tax</span>

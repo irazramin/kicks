@@ -6,6 +6,7 @@ import { ProductCard } from "@/components/new-drops";
 import { SuggestionProductsHeader } from ".";
 import { useProducts } from "@/hooks";
 import { getSliderNavState } from "@/lib/slider";
+import { NotFound } from "@/components/shared/NotFound";
 import {
   DESKTOP_SETTINGS,
   MOBILE_BREAKPOINT,
@@ -71,11 +72,7 @@ export function SuggestionProducts() {
             ))}
           </Slider>
         ) : (
-          <div className="flex flex-col items-center justify-center h-full">
-            <p className="text-center text-muted-foreground">
-              No products found
-            </p>
-          </div>
+          <NotFound message="No products found" className="min-h-[200px]" />
         )}
       </div>
     </section>

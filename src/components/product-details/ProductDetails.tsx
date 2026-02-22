@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { notFound } from "next/navigation";
 import { useProduct } from "@/hooks";
 import {
   ProductActionButtons,
@@ -11,6 +10,7 @@ import {
   ProductImageGallery,
   ProductSizeSelector,
 } from ".";
+import { NotFound } from "@/components/shared/NotFound";
 import { ProductDetailsSkeleton } from "@/components/shared/skeletons";
 import { SuggestionProducts } from "@/components/shared/suggestion-products";
 import {
@@ -41,11 +41,23 @@ export default function ProductDetails({
     sizes.find((s) => !unavailableSizes.includes(s)) ?? null
   );
 
-  if (loading) return <div className="container container-7xl mx-auto lg:px-0 px-4 mt-8"><ProductDetailsSkeleton /></div>;
-  if (error || !product) return notFound();
+  if (loading) {
+    return (
+      <div className="container container-7xl mx-auto lg:px-0 px-4 mt-8">
+        <ProductDetailsSkeleton />
+      </div>
+    );
+  }
+  if (error || !product) {
+    return (
+      <div className="container container-7xl mx-auto lg:px-0 px-4 mt-8">
+        <NotFound message="No product found" className="min-h-[200px]" />
+      </div>
+    );
+  }
 
   return (
-    <div className="min-h-screen">
+    <div className="h-full">
       <div className="container container-7xl mx-auto lg:px-0 px-4 lg:pt-8 pt-6">
         <div className="flex lg:gap-4 gap-6 lg:flex-row flex-col">
           <ProductImageGallery images={product.images} title={product.title} />

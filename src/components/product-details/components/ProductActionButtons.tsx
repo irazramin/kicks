@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import type { RootState } from "@/store";
 import { addToCart } from "@/store/slices/cartSlice";
 import type { Product } from "@/types/product";
+import { toast } from "react-hot-toast";
 
 export function ProductActionButtons({product}: {product: Product}) {
   const dispatch = useAppDispatch();
@@ -20,6 +21,17 @@ export function ProductActionButtons({product}: {product: Product}) {
       size: product.category.image,
     }
     dispatch(addToCart([item]));
+    toast.success('Product added to cart', {
+      style: {
+        border: '1px solid #4A69E2',
+        padding: '16px',
+        color: '#4A69E2',
+      },
+      iconTheme: {
+        primary: '#4A69E2',
+        secondary: '#E5E3E8',
+      },
+    });
   }
 
   return (

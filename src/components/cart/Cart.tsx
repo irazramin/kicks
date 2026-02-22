@@ -1,4 +1,5 @@
 "use client";
+import { toast } from "react-hot-toast";
 import { CartBanner, CartBagSection, OrderSummary } from ".";
 import { SuggestionProducts } from "../shared/suggestion-products";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
@@ -13,6 +14,17 @@ export function Cart() {
 
   const handleRemove = (id: string) => {
     dispatch(removeFromCart(id));
+    toast.success('Product removed from cart', {
+      style: {
+        border: '1px solid #4A69E2',
+        padding: '16px',
+        color: '#4A69E2',
+      },
+      iconTheme: {
+        primary: '#4A69E2',
+        secondary: '#E5E3E8',
+      },
+    });
   };
 
   return (

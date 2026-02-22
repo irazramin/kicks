@@ -4,6 +4,7 @@ import { Navbar } from "@/components/layout";
 import { Footer } from "@/components/footer";
 import { StoreProvider } from "@/store/StoreProvider";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 const rubik = Rubik({
   variable: "--font-rubik",
@@ -36,6 +37,7 @@ export default function RootLayout({
           <Navbar />
           <main>{children}</main>
           <Footer />
+          <Toaster />
         </StoreProvider>
       </body>
     </html>
