@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { ProductsList } from ".";
-import { SHOP_LINK_HREF } from "./constants";
 
 export function NewDropsSection() {
   return (
@@ -15,12 +14,11 @@ export function NewDropsSection() {
               NEW DROPS
             </h2>
           </div>
-          <Link
-            href={SHOP_LINK_HREF}
+          <div
             className="shrink-0 rounded-[10px] bg-primary lg:px-8 px-4 lg:py-4 py-2.5 text-sm font-medium uppercase tracking-[.25px] text-white transition-colors hover:bg-[#4d6ae8]"
           >
            Shop New Drops
-          </Link>
+          </div>
         </div>  
         <ProductsList />
       </div>

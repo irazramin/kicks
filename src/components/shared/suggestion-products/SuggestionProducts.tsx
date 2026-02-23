@@ -16,7 +16,9 @@ import { SuggestionProductSkeleton } from "../skeletons";
 
 export function SuggestionProducts() {
   const sliderRef = useRef<Slider>(null);
-  const { data: products, loading } = useProducts({ categorySlug: "shoes" });
+  const { data: products, loading, error, refetch } = useProducts({
+    categorySlug: "shoes",
+  });
   const [isMobile, setIsMobile] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -34,8 +36,28 @@ export function SuggestionProducts() {
     currentSlide,
     slideCount,
     visibleCount,
-    loading
+    loading || !!error
   );
+
+  if (error) {
+    return (
+      <section>
+        <div className="container container-7xl mx-auto px-4 lg:px-0">
+          <SuggestionProductsHeader
+            onPrev={() => sliderRef.current?.slickPrev()}
+            onNext={() => sliderRef.current?.slickNext()}
+            prevDisabled
+            nextDisabled
+          />
+          <NotFound
+            message="Failed to load products. Please try again."
+            className="min-h-[200px]"
+            onRetry={refetch}
+          />
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section>

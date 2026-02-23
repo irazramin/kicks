@@ -9,8 +9,7 @@ interface CategoryCardProps {
 
 export function CategoryCard({ category }: CategoryCardProps) {
   return (
-    <Link
-      href={`/categories/${category.slug}`}
+    <div
       className="group relative flex lg:w-[690px] w-[358px] lg:h-[690px] h-[358px] shrink-0 flex-col overflow-hidden bg-[#f5f5f5]"
     >
       <div className="relative w-full overflow-hidden bg-[#e5e3e8]">
@@ -31,6 +30,6 @@ export function CategoryCard({ category }: CategoryCardProps) {
           <ArrowUpRight className="h-5 w-5" aria-hidden />
         </span>
       </div>
-    </Link>
+    </div>
   );
 }

@@ -5,7 +5,7 @@ import { ProductCard } from "./ProductCard";
 import { DEFAULT_CATEGORY_SLUG, MAX_PRODUCTS, SKELETON_COUNT } from "../constants";
 
 export function ProductsList() {
-  const { data: products, loading } = useProducts({
+  const { data: products, loading, error, refetch } = useProducts({
     categorySlug: DEFAULT_CATEGORY_SLUG,
   });
 
@@ -15,6 +15,19 @@ export function ProductsList() {
         {Array.from({ length: SKELETON_COUNT }, (_, i) => (
           <SuggestionProductSkeleton key={i} />
         ))}
+      </div>
+    );
+  }
+  if (error) {
+    return (
+      <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
+        <div className="col-span-full">
+          <NotFound
+            message="Failed to load products. Please try again."
+            className="min-h-[200px]"
+            onRetry={refetch}
+          />
+        </div>
       </div>
     );
   }

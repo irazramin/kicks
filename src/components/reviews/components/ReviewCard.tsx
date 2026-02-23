@@ -1,5 +1,5 @@
 import { Star } from "lucide-react";
-import { getAvatarUrl, type Review } from "../constants";
+import { type Review } from "../constants";
 import Image from "next/image";
 
 interface ReviewCardProps {
@@ -34,7 +34,7 @@ export function ReviewCard({ review }: ReviewCardProps) {
             </div>
           </div>
           <Image
-            src={getAvatarUrl(review.name)}
+            src={review.avatar}
             alt=""
             className="lg:w-16 lg:h-16 w-12 h-12 shrink-0 rounded-full object-cover"
             width={48}

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export interface ProductCardProps {
   title: string;
@@ -27,10 +28,13 @@ export function ProductCard({
             New
           </span>
           {imageSrc ? (
-            <img
+            <Image
+              width={300}
+              height={350}
               src={imageSrc}
               alt={title}
-              className="h-full w-full object-contain lg:rounded-[24px] rounded-[12px]"
+              unoptimized={true}
+              className=" w-full object-cover lg:rounded-[24px] rounded-[12px] lg:h-[350px] h-[180px]"
             />
           ) : (
             <div className="h-32 w-32 rounded-full bg-gray-300" />
@@ -38,8 +42,8 @@ export function ProductCard({
         </div>
       </div>
       <div className="text-start flex flex-col items-start lg:gap-4 gap-2 h-full mt-4">
-        <h3 className="font-semibold text-secondary md:text-2xl text-base leading-[100%] font-rubik h-[57px]">
-          {title}
+        <h3 className="font-semibold text-secondary md:text-2xl text-base leading-[100%] font-rubik lg:h-[57px] h-[40px]">
+          {title.length > 30 ? title.slice(0, 30) + "..." : title}
         </h3>
         <button type="button" className="block w-full rounded-[8px] bg-secondary px-4 py-4 text-center md:text-sm text-xs font-medium text-white font-rubik">
           VIEW PRODUCT - <span className="text-[#FFA52F]">{price}</span>

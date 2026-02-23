@@ -4,18 +4,9 @@ export interface Review {
   text: string;
   rating: number;
   name: string;
+  avatar: string;
   image: string;
   imageAlt: string;
-}
-
-export function getAvatarUrl(name: string, size = 48): string {
-  const params = new URLSearchParams({
-    name: name.replace(/\s+/g, "+"),
-    size: String(size * 2),
-    background: "e5e3e8",
-    color: "232321",
-  });
-  return `https://ui-avatars.com/api/?${params.toString()}`;
 }
 
 export const REVIEWS: Review[] = [
@@ -25,7 +16,8 @@ export const REVIEWS: Review[] = [
     text: "I highly recommend shopping from kicks",
     rating: 5,
     name: "Alex Morgan",
-    image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600",
+    image: "/images/reviews/review-product-1.png",
+    avatar: "/images/reviews/review-1.png",
     imageAlt: "Nike Air Jordan 1 sneakers",
   },
   {
@@ -34,7 +26,8 @@ export const REVIEWS: Review[] = [
     text: "I highly recommend shopping from kicks",
     rating: 5,
     name: "Jordan Lee",
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600",
+    image: "/images/reviews/review-product-2.png",
+    avatar: "/images/reviews/review-2.png",
     imageAlt: "Colorful sneakers",
   },
   {
@@ -43,7 +36,8 @@ export const REVIEWS: Review[] = [
     text: "I highly recommend shopping from kicks",
     rating: 5,
     name: "Sam Davis",
-    image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=600",
+    image: "/images/reviews/review-product-3.png",
+    avatar: "/images/reviews/review-3.png",
     imageAlt: "Adidas sneakers",
   },
 ];

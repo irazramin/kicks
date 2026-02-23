@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import { CategoriesHeader, CategoryCard } from ".";
 import { useCategories } from "@/hooks";
 import { getSliderNavState } from "@/lib/slider";
+import { NotFound } from "@/components/shared/NotFound";
 import {
   DESKTOP_SETTINGS,
   MOBILE_BREAKPOINT,
@@ -13,7 +14,7 @@ import {
 
 export default function Categories() {
   const sliderRef = useRef<Slider>(null);
-  const { data: categories, loading } = useCategories();
+  const { data: categories, loading, error, refetch } = useCategories();
   const [isMobile, setIsMobile] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -31,8 +32,29 @@ export default function Categories() {
     currentSlide,
     slideCount,
     visibleCount,
-    loading
+    loading || !!error
   );
+
+  if (error) {
+    return (
+      <section className="bg-secondary lg:py-16 py-6 lg:pt-[90px] pt-6 md:pb-0">
+        <div className="max-w-[1440px] mx-auto px-4">
+          <CategoriesHeader
+            onScrollLeft={() => sliderRef.current?.slickPrev()}
+            onScrollRight={() => sliderRef.current?.slickNext()}
+            prevDisabled
+            nextDisabled
+          />
+          <NotFound
+            message="Failed to load categories. Please try again."
+            className="min-h-[200px]"
+            messageClassName="text-white"
+            onRetry={refetch}
+          />
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="bg-secondary lg:py-16 py-6 lg:pt-[90px] pt-6 md:pb-0">

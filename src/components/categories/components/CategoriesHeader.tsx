@@ -14,9 +14,6 @@ export function CategoriesHeader({
   prevDisabled = false,
   nextDisabled = false,
 }: CategoriesHeaderProps) {
-  const buttonClass =
-    "flex h-10 w-10 items-center justify-center rounded-[8px] bg-white text-secondary transition-colors cursor-pointer text-sm disabled:pointer-events-none disabled:opacity-50";
-
   return (
     <div className="container container-7xl mx-auto lg:px-0 px-4">
       <div className="lg:mb-8 mb-6 flex lg:h-[70px] items-center justify-between">
@@ -28,7 +25,7 @@ export function CategoriesHeader({
             type="button"
             onClick={onScrollLeft}
             disabled={prevDisabled}
-            className={cn(buttonClass)}
+            className={"flex h-10 w-10 items-center justify-center rounded-[8px] bg-white text-secondary transition-colors cursor-pointer text-sm disabled:pointer-events-none disabled:opacity-50"}
             aria-label="Previous categories"
           >
             <ChevronLeft className="h-4 w-4" aria-hidden />
@@ -37,7 +34,7 @@ export function CategoriesHeader({
             type="button"
             onClick={onScrollRight}
             disabled={nextDisabled}
-            className={cn(buttonClass)}
+            className={"flex h-10 w-10 items-center justify-center rounded-[8px] bg-white text-secondary transition-colors cursor-pointer text-sm disabled:pointer-events-none disabled:opacity-50"}
             aria-label="Next categories"
           >
             <ChevronRight className="h-4 w-4" aria-hidden />
