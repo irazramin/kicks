@@ -18,7 +18,6 @@ export function CategoryCard({ category }: CategoryCardProps) {
           height={300}
           src={category.image}
           alt={category.name || "Category Image"}
-          unoptimized={true}
           className="lg:h-full h-auto lg:w-full w-auto object-cover object-center transition-transform group-hover:scale-105"
         />
       </div>

@@ -35,7 +35,7 @@ export default function ProductDetails({
   sizes = DEFAULT_SIZES,
   unavailableSizes = [],
 }: ProductDetailsProps) {
-  const { data: product, loading, error, refetch } = useProduct(productId);
+  const { data: product, loading, error } = useProduct(productId);
   const [selectedColor, setSelectedColor] = useState(colors[0]?.name ?? "");
   const [selectedSize, setSelectedSize] = useState<number | null>(
     sizes.find((s) => !unavailableSizes.includes(s)) ?? null
@@ -48,18 +48,7 @@ export default function ProductDetails({
       </div>
     );
   }
-  if (error) {
-    return (
-      <div className="container container-7xl mx-auto lg:px-0 px-4 mt-8">
-        <NotFound
-          message="Something went wrong. Please try again."
-          className="min-h-[200px]"
-          onRetry={refetch}
-        />
-      </div>
-    );
-  }
-  if (!product) {
+  if (error || !product) {
     return (
       <div className="container container-7xl mx-auto lg:px-0 px-4 mt-8">
         <NotFound message="No product found" className="min-h-[200px]" />

@@ -2,13 +2,20 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { useAppSelector } from "@/store/hooks";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const cartItems = useAppSelector((state) => state.cart.items);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const cartCount = mounted ? cartItems.length : 0;
 
   return (
     <header className="container container-7xl mx-auto lg:px-0 px-4">
@@ -82,13 +89,15 @@ export function Navbar() {
           <Link
             href="/cart"
             className="relative text-foreground transition-colors hover:text-foreground/80 bg-[#FFA52F] lg:w-8 w-5 lg:h-8 h-5 flex items-center justify-center rounded-full"
-            aria-label={`Cart (${cartItems.length} items)`}
+            aria-label={`Cart (${cartCount} items)`}
           >
-            {cartItems.length > 0 ?(
+            {cartCount > 0 ? (
               <span className="text-secondary text-xs font-bold rounded-full flex items-center justify-center">
-                {cartItems?.length ?? 0}
+                {cartCount}
               </span>
-            ): 0}
+            ) : (
+              0
+            )}
           </Link>
         </div>
       </div>

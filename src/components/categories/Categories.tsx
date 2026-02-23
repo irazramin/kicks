@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import Slider from "react-slick";
-import { CategoriesHeader, CategoryCard } from ".";
+import { CategoriesHeader, CategoryCard, CategoryCardSkeleton } from ".";
 import { useCategories } from "@/hooks";
 import { getSliderNavState } from "@/lib/slider";
 import { NotFound } from "@/components/shared/NotFound";
@@ -66,18 +66,26 @@ export default function Categories() {
           nextDisabled={nextDisabled}
         />
         <div className="lg:ml-[60px] ml-4 lg:mr-0 mr-4 overflow-hidden lg:rounded-tl-[64px] rounded-tl-[24px]">
-          <Slider
-            ref={sliderRef}
-            {...sliderSettings}
-            afterChange={setCurrentSlide}
-            key={isMobile ? "mobile" : "desktop"}
-          >
-            {categories?.map((category) => (
-              <div key={category.id}>
-                <CategoryCard category={category} />
-              </div>
-            ))}
-          </Slider>
+          {loading ? (
+            <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+              {Array.from({ length: 4 }, (_, i) => (
+                <CategoryCardSkeleton key={i} />
+              ))}
+            </div>
+          ) : (
+            <Slider
+              ref={sliderRef}
+              {...sliderSettings}
+              afterChange={setCurrentSlide}
+              key={isMobile ? "mobile" : "desktop"}
+            >
+              {categories?.map((category) => (
+                <div key={category.id}>
+                  <CategoryCard category={category} />
+                </div>
+              ))}
+            </Slider>
+          )}
         </div>
       </div>
     </section>

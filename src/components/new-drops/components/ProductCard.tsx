@@ -33,7 +33,6 @@ export function ProductCard({
               height={350}
               src={imageSrc}
               alt={title}
-              unoptimized={true}
               className=" w-full object-cover lg:rounded-[24px] rounded-[12px] lg:h-[350px] h-[180px]"
             />
           ) : (
